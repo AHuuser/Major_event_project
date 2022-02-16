@@ -54,21 +54,16 @@ $(function() {
         // 阻止表单的默认提交行为
         e.preventDefault();
         // 发起Ajax的POST请求
-        $.ajax({
-            url: '/api/login',
-            method: 'POST',
-            // 快速获取表单中的数据
-            data: $(this).serialize(),
-            success: function(res) {
-                if (res.status !== 0) {
-                    return layer.msg(res.message);
-                } else {
-                    layer.msg('登录成功！');
-                    // 将登陆成功后得到的token字符串保存在localstorage中
-                    localStorage.setItem('token', res.token);
-                    // 跳转到后台主页
-                    location.href = '/index.html';
-                }
+        // 快速获取表单中的数据
+        $.post('/api/login', $(this).serialize(), function(res) {
+            if (res.status !== 0) {
+                return layer.msg(res.message);
+            } else {
+                layer.msg('登录成功！');
+                // 将登陆成功后得到的token字符串保存在localstorage中
+                localStorage.setItem('token', res.token);
+                // 跳转到后台主页
+                location.href = '/project/index.html';
             }
         })
     })
