@@ -56,6 +56,22 @@ a {
     border-bottom: 1px solid #282833;
 }
 
+.layui-side-scroll .layui-nav-img {
+    position: absolute;
+    top: 12px;
+    left: 25px;
+}
+
+.layui-nav {
+    position: relative;
+}
+
+.layui-nav-item .layui-nav-img {
+    position: absolute;
+    left: -85px;
+    top: 10px;
+}
+
 .text-avatar {
     display: block;
     width: 40px;
@@ -79,11 +95,8 @@ a {
     left: 90px;
 }
 
-.layui-nav {
-    position: relative;
-}
-
 .layui-nav-item .text-avatar {
+    position: absolute;
     left: -85px;
     top: 10px;
 }

@@ -69,6 +69,6 @@ function renderAvatar(user) {
         $('.layui-nav-img').hide();
         // 渲染文本头像
         var first = name[0].toUpperCase();
-        $('text-avatar').html(first).show();
+        $('.text-avatar').html(first).show();
     }
 }
